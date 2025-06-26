@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { type IRegisterFormValues } from '../../types/interfaces';
 import classes from './auth-form.module.css';
 
@@ -77,6 +77,7 @@ const Register: React.FC = () => {
         )}
 
         <button type="submit">Register</button>
+        <span>Already have an account? <Link to = '/login'>Log in</Link></span>
       </form>
     </div>
   );

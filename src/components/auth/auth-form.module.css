@@ -24,6 +24,8 @@ input {
   font-size: 1rem;
   border-radius: 6px;
   border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 input:focus {
@@ -48,4 +50,41 @@ button:hover {
 .error {
   color: red;
   font-size: 0.85rem;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input {
+  padding: 0.75rem 60px 0.75rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: #0077ff;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  color: #00eeff;
+  cursor: pointer;
+  padding: 0;
+  font-weight: bold;
+}
+
+.toggle-password:hover {
+  color: #b100c1;
 }
