@@ -1,12 +1,57 @@
-import react from 'react'
+import * as React from "react";
+import { createRoot } from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
-const App: react.FC = () => {
+import AppContainer from "./components/layout/AppContainer";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
+import Topics from "./pages/Topics";
+import Progress from "./pages/Progress";
+import Register from "./pages/Register";
 
-  return (
+const router = createBrowserRouter([
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/",
+    element: <AppContainer />,
+    children: [
+      {
+        index: true,
+        element: <Dashboard/>,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "topics",
+        element: <Topics />,
+      },
+      {
+        path: "progress",
+        element: <Progress />,
+      },
+    ],
+  },
+]);
+
+const App: React.FC = () => {
+  return( 
     <>
-    <h1>Hi This is Rajendra</h1>
+      <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
 export default App
